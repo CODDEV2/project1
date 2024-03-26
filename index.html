@@ -30,7 +30,6 @@
 		</div>
 
 		<script>
-			// Menu items and their prices
 			const menu = {
 				Coffee: 3.5,
 				Tea: 2.5,
@@ -38,9 +37,8 @@
 				Sandwich: 5.0,
 			};
 
-			let orders = []; // Array to store customer's orders
+			let orders = []; 
 
-			// Function to display the menu
 			function displayMenu() {
 				let menuElement = document.getElementById('menu');
 				let menuHTML = '<h2>Menu:</h2>';
@@ -52,13 +50,11 @@
 				menuElement.innerHTML = menuHTML;
 			}
 
-			// Function to add an item to the order
 			function addToOrder(item) {
 				orders.push(item);
 				updateOrders();
 			}
 
-			// Function to update the list of orders and the total price
 			function updateOrders() {
 				let orderListElement = document.getElementById('orderList');
 				let totalElement = document.getElementById('total');
@@ -74,7 +70,6 @@
 				totalElement.textContent = `Total: $${total.toFixed(2)}`;
 			}
 
-			// Function to place the order
 			function placeOrder() {
 				if (orders.length === 0) {
 					alert('Please add items to your order.');
@@ -83,11 +78,10 @@
 
 				let total = orders.reduce((acc, item) => acc + menu[item], 0);
 				alert(`Your total is: $${total.toFixed(2)}. Thank you for your order!`);
-				orders = []; // Clear the orders
-				updateOrders(); // Update the display
+				orders = []; 
+				updateOrders(); 
 			}
 
-			// Call displayMenu function to show the menu on page load
 			displayMenu();
 		</script>
 	</body>
